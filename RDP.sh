@@ -5,6 +5,7 @@ sudo useradd -m lab
 sudo adduser lab sudo
 echo 'lab:lab' | sudo chpasswd
 sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
+sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable -y
 sudo apt-get update
 wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
 sudo dpkg --install chrome-remote-desktop_current_amd64.deb
@@ -17,7 +18,7 @@ sudo systemctl disable lightdm.service
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg --install google-chrome-stable_current_amd64.deb
 sudo apt install --assume-yes --fix-broken
-sudo apt install nautilus nano file-roller unrar vlc -y 
+sudo apt install nautilus nano file-roller unrar vlc qbittorrent -y 
 sudo adduser lab chrome-remote-desktop
 } &> /dev/null &&
 printf "\nSetup Complete " >&2 ||
